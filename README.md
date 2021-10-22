@@ -1,3 +1,3 @@
 ### Programa em execução
 
-![Exemplo](./img/example.gif)
+![Exemplo](./img/running.gif)
