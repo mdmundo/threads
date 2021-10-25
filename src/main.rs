@@ -23,14 +23,17 @@ fn main() {
     // Declaração do vetor que serve como parâmetro para função fibonacci(n: u32)
     // Obs.: O número 24 ocupa essa posição para mostrar que mesmo sendo chamado primeiro
     // seu resultado vem por último por ser a operação que custa mais processamento.
-    let input: [u32; 6] = [24, 12, 0, 1, 8, 3];
+    let input: [u32; 6] = [24, 12, 5, 1, 8, 3];
 
     // Declaração do vetor que receberá o resultado das chamadas para função fibonacci(n: u32)
     let mut output = vec![];
 
     // Laço de repetição que percorre o vetor input
     for number in input {
-        println!("Looking for number {} in Fibonacci sequence", number);
+        println!(
+            "Procurando número que está na posição {} na sequência de Fibonacci",
+            number
+        );
 
         // output.push Adiciona parâmetro ao final do vetor
         // thread::spawn Inicia um novo thread
@@ -38,7 +41,7 @@ fn main() {
         output.push(thread::spawn(move || -> u32 {
             let result = fibonacci(number);
 
-            println!("Number {} of the Fibonacci sequence is {}", number, result);
+            println!("Posição {} da sequência de Fibonacci é {}", number, result);
 
             // Retorna o resultado da chamada à função fibonacci(n: u32)
             result
@@ -48,5 +51,5 @@ fn main() {
     // Realiza a soma de todos os valores resultantes da chamada à função fibonacci(n: u32)
     let final_result = output.into_iter().map(|c| c.join().unwrap()).sum::<u32>();
 
-    println!("Final sum result: {}", final_result);
+    println!("A soma dos valores encontrados é {}", final_result);
 }
