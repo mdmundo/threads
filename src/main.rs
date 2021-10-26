@@ -1,3 +1,4 @@
+// Para rodar este código acesse https://play.rust-lang.org/?version=stable&mode=release&edition=2021&gist=5c338fd5d0e0d40ad1f9dc534f654308
 // Esse programa recebe um vetor de números ordinais para a sequência de Fibonacci
 // e retorna a soma dos respectivos números utilizando threads.
 
